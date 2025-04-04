@@ -164,22 +164,22 @@ export default function timer(){
                     {currentTimeListIndex === 0 ? <></> 
                     : (
                     <Pressable style={styles.timeListAddBtn} onPress={()=>handleBackward()}>
-                        <AntDesign name="banckward" size={24} color="white" />
+                        <AntDesign name="banckward" size={24} color={colorScheme === 'dark' ? 'black': 'white'} />
                     </Pressable>)
                     }              
                     <Pressable style={styles.timeListAddBtn} onPress={()=>handlePlayPause()}>
                         { isStopped 
-                        ? <FontAwesome name="play" size={24} color="white" /> 
-                         : <FontAwesome name="pause" size={24} color="white" />}
+                        ? <FontAwesome name="play" size={24} color={colorScheme === 'dark' ? 'black': 'white'} /> 
+                         : <FontAwesome name="pause" size={24} color={colorScheme === 'dark' ? 'black': 'white'} />}
                     </Pressable>
                     {currentTimeListIndex+1 != timeList.length ? 
                     (
                         <Pressable style={styles.timeListAddBtn} onPress={()=>handleForward()}>
-                            <AntDesign name="forward" size={24} color="white" />
+                            <AntDesign name="forward" size={24} color={colorScheme === 'dark' ? 'black': 'white'} />
                         </Pressable>
                     ): <></>}
                     <Pressable style={styles.timeListAddBtn} onPress={()=>handleReset()}>
-                        <FontAwesome5 name="square-full" size={24} color="white" />    
+                        <FontAwesome5 name="square-full" size={24} color={colorScheme === 'dark' ? 'black': 'white'} />    
                     </Pressable>
 
                 </View>
@@ -202,7 +202,7 @@ const stylesMain = (theme,colorScheme)=>{
     return StyleSheet.create({
         container : {
             flex:1,
-            backgroundColor: 'white',
+            backgroundColor: theme.background,
         },
         nameHeadContainer : {
             flexDirection: 'row',
@@ -246,28 +246,30 @@ const stylesMain = (theme,colorScheme)=>{
             fontSize: 20,
             borderWidth:2,
             borderRadius:20,
-            padding: 5
+            padding: 5,
+            borderColor:theme.normalText,
+            color: theme.normalText
         },
         
         timeAddBtn:{
             fontSize:20,
-            backgroundColor: 'black',
-            color:'white',
+            backgroundColor: theme.btnBackground,
+            color:theme.textOfButton,
             padding: 5,
             borderRadius:10
         },
         plusBtn:{
             textAlign:'center',
-            backgroundColor: 'black',
-            color: 'white',
+            backgroundColor: theme.btnBackground,
+            color: theme.textOfButton,
             fontSize:30,
             paddingHorizontal:25,
         
         },
         minusBtn:{
             textAlign:'center',
-            backgroundColor: 'black',
-            color: 'white',
+            backgroundColor: theme.btnBackground,
+            color: theme.textOfButton,
             fontSize:30,
             paddingHorizontal:25,
         },
@@ -275,25 +277,28 @@ const stylesMain = (theme,colorScheme)=>{
             fontSize:20,
             borderWidth:2,
             borderRadius:20,
-            padding: 5
+            padding: 5,
+            borderColor:theme.normalText,
+            color: theme.normalText
         },
         addTimeNumber:{
-            fontSize:70
+            fontSize:70,
+            color:theme.normalText
         },
         timeListAddBtn:{
             fontSize:20,
-            backgroundColor: 'black',
-            color:'white',
+            backgroundColor: theme.btnBackground,
+            color: theme.textOfButton,
             paddingVertical: 10,
             paddingHorizontal: 20,
             borderRadius:50
         },
         EachTimeListName:{
-            color:'black',
+            color: theme.normalText,
             fontSize:20
         },
         EachTimeListTime:{
-            color:'black',
+            color: theme.normalText,
             fontSize:30
         },
         eachTimeListContainer:{
@@ -305,11 +310,11 @@ const stylesMain = (theme,colorScheme)=>{
             padding:5
         },
         commonText :{
-            color:'white',
+            color: theme.textOfButton,
             fontSize: 20
         },
         currentTimeList :{
-            backgroundColor: '#5d6d7e'  
+            backgroundColor: '#5d6d7e'
         },
         timeControllerContainer:{
             flexDirection: 'row',

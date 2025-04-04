@@ -156,7 +156,7 @@ const stylesMain = (theme,colorScheme)=>{
     return StyleSheet.create({
         container : {
             flex:1,
-            backgroundColor: 'white',
+            backgroundColor: theme.background,
         },
         nameHeadContainer : {
             flexDirection: 'row',
@@ -190,41 +190,43 @@ const stylesMain = (theme,colorScheme)=>{
             alignItems: 'center',
             justifyContent:'center',
             flexDirection:'column',
-            width: 120, // Add explicit width
-            height: 200, // Add explicit height
+            width: 120,
+            height: 200,
             marginHorizontal: 5
         },
         nameTimeInput:{
             fontSize: 20,
             borderWidth:2,
             borderRadius:20,
-            padding: 5
+            padding: 5,
+            borderColor:theme.normalText,
+            color: theme.normalText
         },
         
         timeAddBtn:{
             fontSize:20,
-            backgroundColor: 'black',
-            color:'white',
+            backgroundColor: theme.btnBackground,
+            color:theme.textOfButton,
             padding: 5,
             borderRadius:10
         },
         plusBtn:{
             textAlign:'center',
-            backgroundColor: 'black',
-            color: 'white',
+            backgroundColor: theme.btnBackground,
+            color: theme.textOfButton,
             fontSize:30,
             paddingHorizontal:25,
-            width: 70,          // Define width
+            width: 70,         
             height: 30,  
         
         },
         minusBtn:{
             textAlign:'center',
-            backgroundColor: 'black',
-            color: 'white',
+            backgroundColor: theme.btnBackground,
+            color: theme.textOfButton,
             fontSize:30,
             paddingHorizontal:25,
-            width: 70,          // Define width
+            width: 70,         
             height: 30,    
 
         },
@@ -233,12 +235,15 @@ const stylesMain = (theme,colorScheme)=>{
             borderWidth:2,
             borderRadius:20,
             padding: 5,
-            width:300
+            width:300,
+            borderColor:theme.normalText,
+            color: theme.normalText
         },
         addTimeNumber:{
             fontSize:70,
             width:'100%',
-            textAlign:'center'
+            textAlign:'center',
+            color:theme.normalText
         },
         removeTimeListBtn: {
             padding: 5,
@@ -251,20 +256,20 @@ const stylesMain = (theme,colorScheme)=>{
         },
         timeListAddBtn:{
             fontSize:20,
-            backgroundColor: 'black',
-            color:'white',
+            backgroundColor: theme.btnBackground,
+            color: theme.textOfButton,
             paddingVertical: 10,
             paddingHorizontal: 30,
             borderRadius:10
         },
         EachTimeListName:{
-            color:'black',
+            color: theme.textOfButton,
             marginLeft:10,
             fontSize:20,
-            
+            color:theme.normalText
         },
         EachTimeListTime:{
-            color:'black',
+            color: theme.normalText,
             fontSize:30,
             
         },
@@ -274,10 +279,11 @@ const stylesMain = (theme,colorScheme)=>{
             flexDirection:'row',
             justifyContent:'space-between',
             alignItems:'center',
-            padding:5
+            padding:5,
+            borderColor: theme.backgroundColor
         },
         commonText :{
-            color:'white',
+            color: theme.textOfButton,
             fontSize: 20
         }
 

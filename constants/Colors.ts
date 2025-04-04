@@ -10,6 +10,9 @@ export const Colors = {
   light: {
     text: '#11181C',
     background: '#fff',
+    textOfButton: '#fff',
+    normalText : '#000',
+    btnBackground: '#000',
     itemBackground:'#000',
     tint: tintColorLight,
     icon: '#687076',
@@ -19,6 +22,9 @@ export const Colors = {
   dark: {
     text: '#fff',
     background: '#151718',
+    textOfButton: '#000',
+    normalText : '#fff',
+    btnBackground: '#fff',
     itemBackground:'#000',
     tint: tintColorDark,
     icon: '#9BA1A6',
